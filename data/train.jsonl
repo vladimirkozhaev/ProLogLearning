@@ -1,0 +1,3 @@
+{"text": "What is Prolog? Prolog is a logic programming language.", "response": "Prolog is a declarative programming language based on formal logic."}
+{"text": "How to write facts in Prolog? Write them as predicates.", "response": "In Prolog, facts are written as predicate_name(arguments)."}
+{"text": "What are Prolog rules? Rules define relationships.", "response": "Prolog rules are written as Head :- Body. meaning Head is true if Body is true."}
