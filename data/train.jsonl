@@ -1,0 +1,9 @@
+{"text": "Question: How to write Hello World in Prolog?\nAnswer: Use write('Hello, World!'), nl."}
+{"text": "Question: What predicate prints Hello World?\nAnswer: hello_world predicate prints Hello World"}
+{"text": "Question: How to output text in Prolog?\nAnswer: Use write/1 predicate to output text\"."}
+{"text": "Question: What is the head of [1,2,3]?\nAnswer: 1 is the head of [1,2,3]"}
+{"text": "Question: How to check if X is a member of list?\nAnswer: Use member(X, List)"}
+{"text": "Question: How to concatenate two lists?\nAnswer: Use append(List1, List2, Result)"}
+{"text": "Question: Who is the parent of mary?\nAnswer: john is the parent of mary"}
+{"text": "Question: What are the children of john?\nAnswer: mary and bob are children of john"}
+{"text": "Question: Are mary and bob siblings?\nAnswer: Yes, mary and bob are siblings"}

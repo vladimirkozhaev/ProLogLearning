@@ -1,0 +1,27 @@
+Q: How to write Hello World in Prolog?
+A: 
+--------------------------------------------------
+Q: What predicate prints Hello World?
+A: 
+--------------------------------------------------
+Q: How to output text in Prolog?
+A: 
+--------------------------------------------------
+Q: What is the head of [1,2,3]?
+A: 
+--------------------------------------------------
+Q: How to check if X is a member of list?
+A: Use member(X, List)
+--------------------------------------------------
+Q: How to concatenate two lists?
+A: Use write/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1/1
+--------------------------------------------------
+Q: Who is the parent of mary?
+A: Who is the parent of whom? Who is the parent of whom? Who is the parent of whom? Who is the parent of whom? Who is the parent of whom? Who is the parent of whom? Who is the parent of whom? Who
+--------------------------------------------------
+Q: What are the children of john?
+A: 
+--------------------------------------------------
+Q: Are mary and bob siblings?
+A: Yes, yes, no, not sure
+--------------------------------------------------

@@ -30,10 +30,10 @@ def extract_training_data_from_pl(pl_file_path):
         question = match.group(1).strip()
         answer = match.group(2).strip()
         
-        # Create training example
+        # Create training example in MLX LM format
+        training_text = f"Question: {question}\nAnswer: {answer}"
         example = {
-            "text": question,
-            "response": answer
+            "text": training_text
         }
         examples.append(example)
     
@@ -48,15 +48,15 @@ def extract_training_data_from_pl(pl_file_path):
         rules = re.findall(rule_pattern, content)
         
         if facts:
+            training_text = f"Question: What facts are defined in this Prolog code about {topic}?\nAnswer: The code defines facts: {', '.join(set(facts))}"
             examples.append({
-                "text": f"What facts are defined in this Prolog code about {topic}?",
-                "response": f"The code defines facts: {', '.join(set(facts))}"
+                "text": training_text
             })
         
         if rules:
+            training_text = f"Question: What rules are defined in this Prolog code about {topic}?\nAnswer: The code defines rules: {', '.join(set(rules))}"
             examples.append({
-                "text": f"What rules are defined in this Prolog code about {topic}?",
-                "response": f"The code defines rules: {', '.join(set(rules))}"
+                "text": training_text
             })
     
     return examples

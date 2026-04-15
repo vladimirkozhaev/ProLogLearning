@@ -14,7 +14,7 @@ python -m mlx_lm.lora \
   --model $MODEL \
   --train \
   --data ./data \
-  --iters 200 \
+  --iters 1000 \
   --batch-size 1 \
   --num-layers 8 \
   --max-seq-length 512 \

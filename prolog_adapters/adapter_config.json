@@ -7,7 +7,7 @@
     "fine_tune_type": "lora",
     "grad_accumulation_steps": 1,
     "grad_checkpoint": false,
-    "iters": 200,
+    "iters": 1000,
     "learning_rate": 2e-05,
     "lora_parameters": {
         "rank": 8,
