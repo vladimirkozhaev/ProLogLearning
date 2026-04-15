@@ -3,10 +3,13 @@
 # Activate virtual environment
 source mlx_venv/bin/activate
 
+echo "Preparing training data from Prolog files..."
+python prepare_prolog_data.py
+
 # Название базовой квантованной модели (4-bit)
 MODEL="mlx-community/Qwen1.5-0.5B-Chat-4bit"
 
-# Запуск процесса обучения
+echo "Starting training process..."
 python -m mlx_lm.lora \
   --model $MODEL \
   --train \
