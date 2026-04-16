@@ -1,65 +1,67 @@
-# Prolog Learning Extension - LLM Training for Prolog
+# Prolog Learning - LLM Training for Prolog
 
 ## Overview / Overview (English)
 
-Prolog Learning Extension is a VSCode/Windsurf extension that provides a convenient interface for testing and training LLM models on Prolog code.
+Prolog Learning is a comprehensive tool for testing and training LLM models on Prolog code. It provides scripts and utilities for fine-tuning language models to understand and generate Prolog code.
 
 ## Overview / Overview (Russian)
 
-Prolog Learning Extension - this is a VSCode/Windsurf extension that provides a convenient interface for testing and training LLM models on Prolog code.
+Prolog Learning - this is a comprehensive tool for testing and training LLM models on Prolog code. It provides scripts and utilities for fine-tuning language models to understand and generate Prolog code.
 
 ## Features / Features (English)
 
 - **Complete Workflow**: Full training and testing cycle
-- **VSCode/Windsurf Integration**: Native editor support
 - **Automated Testing**: Before/after training comparison
 - **Detailed Reports**: Comprehensive analysis and metrics
 - **Multi-language Support**: Russian and English documentation
+- **Script-based Interface**: Command-line tools for training and testing
 
 ## Features / Features (Russian)
 
 - **Complete Workflow**: Full training and testing cycle (English)
-- **VSCode/Windsurf Integration**: Native editor support (English)
 - **Automated Testing**: Before/after training comparison (English)
 - **Detailed Reports**: Comprehensive analysis and metrics (English)
 - **Multi-language Support**: Russian and English documentation (English)
+- **Script-based Interface**: Command-line tools for training and testing (English)
 
 **Russian Translation:**
 - **Complete Workflow**: Full training and testing cycle (English)
-- **VSCode/Windsurf Integration**: Native editor support (English)
 - **Automated Testing**: Before/after training comparison (English)
 - **Detailed Reports**: Comprehensive analysis and metrics (English)
 - **Multi-language Support**: Russian and English documentation (English)
+- **Script-based Interface**: Command-line tools for training and testing (English)
 
 ## Quick Start
 
 ### Installation
 
 ```bash
-# Install to both VSCode and Windsurf
-./install_universal.sh
+# Setup virtual environment (if not exists)
+python -m venv mlx_venv
+source mlx_venv/bin/activate
 
-# Or install to specific editor
-./install_vsix.sh          # VSCode only
-./install_to_windsurf.sh   # Windsurf only
+# Install MLX LM
+pip install mlx-lm
+
+# Prepare training data
+python prepare_prolog_data.py
 ```
 
 ### Usage
 
-1. Open VSCode or Windsurf
-2. Press `Ctrl+Shift+P`
-3. Type: `Show Prolog Testing Panel`
-4. Click **Run Complete Test**
+```bash
+# Run complete training and testing workflow
+./full_comparison_workflow.sh
+
+# Or run individual steps
+./train_prolog.sh                    # Training only
+python generate_comparison.py        # Generate report
+```
 
 ## Project Structure
 
 ```
 ProLogLearning/
-|
-|-- vscode_extension/           # Extension files
-|   |-- extension.js           # Main extension code
-|   |-- package.json           # Extension manifest
-|   |-- README.md              # Extension documentation
 |
 |-- examples/                  # Prolog code examples
 |   |-- basic_prolog.pl       # Basic predicates
@@ -74,6 +76,7 @@ ProLogLearning/
 |   |-- train_prolog.sh        # Training script
 |   |-- full_comparison_workflow.sh  # Complete workflow
 |   |-- generate_comparison.py # Report generation
+|   |-- prepare_prolog_data.py # Data preparation
 |
 |-- Results
 |   |-- before_training_results.txt
@@ -125,29 +128,18 @@ cat data/train.jsonl
 | `full_comparison_workflow.sh` | Complete training & testing cycle |
 | `train_prolog.sh` | Model training only |
 | `generate_comparison.py` | Generate comparison reports |
-| `install_universal.sh` | Install extension to both editors |
-| `check_installation.sh` | Verify extension installation |
-| `launch_windsurf_debug.sh` | Launch Windsurf with debug mode |
+| `prepare_prolog_data.py` | Prepare training data from Prolog files |
+| `complete_training_test.py` | Comprehensive training and testing workflow |
 
 ## Troubleshooting
-
-### Extension Not Working
-```bash
-# Check installation
-./check_installation.sh
-
-# Reinstall extension
-./uninstall_extension.sh
-./install_universal.sh
-
-# Launch with debug
-./launch_windsurf_debug.sh
-```
 
 ### Training Issues
 ```bash
 # Check virtual environment
 source mlx_venv/bin/activate
+
+# Verify MLX LM installation
+pip show mlx-lm
 
 # Verify training data
 python prepare_prolog_data.py
@@ -156,21 +148,33 @@ python prepare_prolog_data.py
 ./train_prolog.sh
 ```
 
+### Data Preparation Issues
+```bash
+# Check Prolog examples
+ls -la examples/
+
+# Verify data preparation
+python prepare_prolog_data.py
+
+# Check generated training data
+cat data/train.jsonl
+```
+
 ## Requirements
 
-- **VSCode**: 1.74.0+ or **Windsurf**
 - **Python**: 3.8+
 - **MLX LM**: For model training
 - **Virtual Environment**: mlx_venv
+- **Command Line**: Bash shell or compatible terminal
 
-## Extension Commands
+## Key Scripts
 
-| Command | Description |
+| Script | Description |
 |---------|-------------|
-| `Show Prolog Testing Panel` | Open testing interface |
-| `Run Complete Test` | Full training cycle |
-| `Quick Test` | Quick model check |
-| `View Report` | Show comparison report |
+| `full_comparison_workflow.sh` | Complete training and testing cycle |
+| `train_prolog.sh` | Model training only |
+| `prepare_prolog_data.py` | Data preparation from Prolog files |
+| `generate_comparison.py` | Generate comparison reports |
 
 ## Code Examples
 

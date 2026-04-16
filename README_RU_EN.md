@@ -1,10 +1,10 @@
-# Prolog Learning Extension - Расширение для обучения LLM моделей
+# Prolog Learning - Tool for training LLM models
 
-## 📋 Обзор / Overview
+## Overview / Overview
 
-Prolog Learning Extension - это расширение для VSCode/Windsurf, которое предоставляет удобный интерфейс для тестирования и обучения LLM моделей на Prolog коде.
+Prolog Learning is a comprehensive tool for testing and training LLM models on Prolog code. It provides scripts and utilities for fine-tuning language models to understand and generate Prolog code.
 
-Prolog Learning Extension is a VSCode/Windsurf extension that provides a convenient interface for testing and training LLM models on Prolog code.
+Prolog Learning - this is a comprehensive tool for testing and training LLM models on Prolog code. It provides scripts and utilities for fine-tuning language models to understand and generate Prolog code.
 
 ---
 
@@ -50,36 +50,38 @@ cp vscode_extension/* ~/.windsurf/extensions/prolog-learning-extension/
 ### **English**
 
 #### **Requirements**
-- VSCode 1.74.0+ or Windsurf
 - Python 3.8+
 - MLX LM library
 - Virtual environment mlx_venv
+- Command line terminal
 
-#### **Automatic Installation**
+#### **Automatic Setup**
 ```bash
-# Install to both editors
-./install_universal.sh
+# Setup virtual environment
+python -m venv mlx_venv
+source mlx_venv/bin/activate
 
-# Install to VSCode only
-./install_vsix.sh
+# Install MLX LM
+pip install mlx-lm
 
-# Install to Windsurf only
-./install_to_windsurf.sh
+# Prepare training data
+python prepare_prolog_data.py
 ```
 
-#### **Manual Installation**
+#### **Manual Setup**
 ```bash
-# Create extension directory
-mkdir -p ~/.vscode/extensions/prolog-learning-extension
+# Create virtual environment
+python -m venv mlx_venv
+source mlx_venv/bin/activate
 
-# Copy files
-cp vscode_extension/extension.js ~/.vscode/extensions/prolog-learning-extension/
-cp vscode_extension/package.json ~/.vscode/extensions/prolog-learning-extension/
-cp vscode_extension/README.md ~/.vscode/extensions/prolog-learning-extension/
+# Install dependencies
+pip install mlx-lm
 
-# For Windsurf
-mkdir -p ~/.windsurf/extensions/prolog-learning-extension
-cp vscode_extension/* ~/.windsurf/extensions/prolog-learning-extension/
+# Prepare data
+python prepare_prolog_data.py
+
+# Start training
+./train_prolog.sh
 ```
 
 ---
@@ -111,60 +113,56 @@ cp vscode_extension/* ~/.windsurf/extensions/prolog-learning-extension/
 # 3. Посмотреть отчет в training_comparison_report.md
 ```
 
----
+#### Available Scripts
+- **full_comparison_workflow.sh** - complete testing and training cycle
+- **train_prolog.sh** - model training only
+- **prepare_prolog_data.py** - data preparation
+- **generate_comparison.py** - generate comparison reports
 
-### **English**
-
-#### **Launch Extension**
-1. Open VSCode or Windsurf
-2. Press `Ctrl+Shift+P`
-3. Type: `Show Prolog Testing Panel`
-4. Press Enter
-
-#### **Available Functions**
-- 🚀 **Run Complete Test** - complete testing and training cycle
-- ⚡ **Quick Test** - quick check of current model
-- 📊 **View Report** - view comparison report
-- 📝 **Before/After Training** - access result files
-
-#### **Complete Workflow**
+#### Complete Workflow
 ```bash
 # Run complete cycle
 ./full_comparison_workflow.sh
 
-# Or via extension
-# 1. Run Complete Test
-# 2. Wait for all stages to complete
-# 3. View report in training_comparison_report.md
+# Monitor progress
+# 1. Training phase (1000 iterations)
+# 2. Before/after testing
+# 3. Report generation
+# 4. View results in training_comparison_report.md
 ```
 
 ---
 
-## 📂 Структура проекта / Project Structure
+### English
 
-### **Основные файлы / Main Files**
+### Основные файлы / Main Files
 ```
 ProLogLearning/
-├── vscode_extension/              # Расширение для редактора
-│   ├── extension.js              # Основной код
-│   ├── package.json              # Манифест
-│   └── README.md                 # Документация
-├── examples/                     # Примеры Prolog кода
-│   ├── basic_prolog.pl          # Базовые примеры
-│   ├── lists_prolog.pl          # Работа со списками
-│   ├── hello.pl                 # Hello World
-│   └── arith.pl                 # Арифметика (Church numerals)
-├── data/                         # Данные для обучения
-│   └── train.jsonl              # Обучающий набор
-├── train_prolog.sh               # Скрипт обучения
-├── full_comparison_workflow.sh   # Полный рабочий процесс
-├── generate_comparison.py         # Генерация отчетов
-└── training_comparison_report.md   # Результаты сравнения
+|
+|-- examples/                  # Prolog code examples
+|   |-- basic_prolog.pl       # Basic predicates
+|   |-- lists_prolog.pl       # List operations
+|   |-- hello.pl              # Hello World
+|   |-- arith.pl              # Church numerals & arithmetic
+|
+|-- data/                      # Training data
+|   |-- train.jsonl           # Training dataset
+|
+|-- Scripts & Tools
+|   |-- train_prolog.sh        # Training script
+|   |-- full_comparison_workflow.sh  # Complete workflow
+|   |-- generate_comparison.py # Report generation
+|   |-- prepare_prolog_data.py # Data preparation
+|
+|-- Results
+|   |-- before_training_results.txt
+|   |-- after_training_results.txt
+|   |-- training_comparison_report.md
 ```
 
 ---
 
-## 🔧 Настройка обучения / Training Configuration
+## Настройка обучения / Training Configuration
 
 ### **Русский / Russian**
 
