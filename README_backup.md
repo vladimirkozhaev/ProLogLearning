@@ -1,5 +1,7 @@
 # Prolog Learning Extension - LLM Training for Prolog
 
+# Prolog Learning Extension - LLM Training for Prolog
+
 ## Overview / Overview (English)
 
 Prolog Learning Extension is a VSCode/Windsurf extension that provides a convenient interface for testing and training LLM models on Prolog code.
